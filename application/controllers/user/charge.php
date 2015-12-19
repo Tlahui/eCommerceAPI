@@ -12,15 +12,16 @@ class Charge extends CI_Controller {
                         Conekta::setApiKey('key_Fq5U8GUU28hTqgxy4md4TQ');
                         try {
                                     $charge = Conekta_Charge::create(array(
-                                            "amount"=> 51000,
+                                            "amount"=> 125000,
                                             "currency"=> "MXN",
-                                            "description"=> "Tlahui",
-                                            "reference_id"=> "Tlahui001",
+                                            "description"=> "Galileo Tlahui",
+                                            "reference_id"=> "Tlahui001 Galileo",
                                             "card"=> $this->input->post("token")
                                             //"tok_a4Ff0dD2xYZZq82d9"
                                     ));
-
+                                    
                                     var_dump($charge);
+                                    //echo json_encode($charge);
 
 
                         } catch (Conekta_Error $e) {

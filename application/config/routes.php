@@ -40,6 +40,7 @@
 
 $route['user/upload'] =  "user/upload/upload_image";
 $route['user/checkout'] =  "user/charge/checkout";
+$route['user/webhook'] =  "user/charge/confirm_payment";
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';

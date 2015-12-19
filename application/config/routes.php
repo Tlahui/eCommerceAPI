@@ -37,8 +37,10 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
+$route['user/checkout'] =  "user/payment/checkout";
 $route['user/upload'] =  "user/upload/upload_image";
+$route['user/webhook'] =  "user/payment/confirm_payment";
+
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';

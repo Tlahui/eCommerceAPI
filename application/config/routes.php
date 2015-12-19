@@ -39,6 +39,7 @@
 */
 
 $route['user/upload'] =  "user/upload/upload_image";
+$route['user/checkout'] =  "user/charge/checkout";
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';

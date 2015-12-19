@@ -40,6 +40,7 @@
 
 $route['user/upload'] =  "user/upload/upload_image";
 $route['user/checkout'] =  "user/payment/checkout";
+$route['user/add/card'] =  "user/payment/register_card";
 $route['conekta/user/webhook'] =  "user/payment/confirm_payment";
 
 $route['default_controller'] = "welcome";

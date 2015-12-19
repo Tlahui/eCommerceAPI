@@ -1,17 +1,12 @@
-hola a todos
-marcos
-feli
-marcos
-Elizabeth MarGom
-ChemaSamano
-benjamin
+mvalenciarmz
 fzagato
-Rick
-ChemaSamano
-benjamin
-fzagato
-alejandra
-Novelo
+elizabeth-slack
 galileo
+<<<<<<< HEAD
 fortino
 10 de la noche
+=======
+abautista
+rick_vera
+
+>>>>>>> origin/rel-v1.0

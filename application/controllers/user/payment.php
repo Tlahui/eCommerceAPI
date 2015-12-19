@@ -40,9 +40,15 @@ class Payment extends CI_Controller {
 
 		//$this->load->view('welcome_message');
 	}
-	public function confirm_checkout()
+	public function confirm_payment()
 	{
-		//$body=@file_get_contents(filename)
+
+		$body=@file_get_contents('php://input');
+		$event_json=json_decode($body);
+		if ($event_json->type=='charge.paid') 
+		{
+			echo $event_json->data->object->reference_id;
+		}
 	}
 
 }

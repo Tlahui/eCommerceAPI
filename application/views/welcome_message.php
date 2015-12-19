@@ -11,9 +11,5 @@ ChemaSamano
 benjamin
 fzagato
 alejandra
-<<<<<<< HEAD
-Novelo
-=======
 Novelo
 galileo
->>>>>>> galileo

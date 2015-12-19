@@ -3,9 +3,23 @@
 class Payment extends CI_Controller {
 
 
-	public function index()
+	public function checkout()
 	{
+		Conekta::setApiKey('  ');
 		$this->load->view('Bienvenido a la función conekta');
+
+		try {
+			$charge = Conekta_Charge::create(array(
+				"amount" => 51000,
+				"currency"=> "MXN",
+				"description"=> "Tlahui",
+				"reference_id"=> "Tlahui100",
+				"card"=> $this->input->post("token")
+			)
+		}
+		catch (Conekta_Error $e) {
+			echo $e->getMessage();
+		}
 	}
 }
 

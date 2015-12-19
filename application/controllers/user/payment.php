@@ -28,9 +28,6 @@ class Payment extends CI_Controller {
 	}
 
 
-	// Demostración de recuperar (del objeto que regresa conekta) los nodos de json que nos interesan
-	// En postman, enviaremos el json que regresa conekta, ya que esta función es para propósitos demostrativos solamente
-	// de cómo recuperamos dentro de la estructura de dicho JSON, el o los nodos que nos interesan
 	public function confirm_payment() {
 		$body = @file_get_contents("php://input");
 		$event_json = json_decode( $body );
@@ -73,7 +70,52 @@ class Payment extends CI_Controller {
 
 
 
+
+	public function subscribe() {
+
+		Conekta::setApiKey("key_Fq5U8GUU28hTqgxy4md4TQ");
+
+		// Creamos un plan
+// primero creamos un plan
+/*		
+		$plan = Conekta_Plan::create(array(
+			'id' => "tlahui-plan-mensual",
+			'name' => "Gold Plan",
+			'amount' => 10000,
+			'currency' => "MXN",
+			'interval' => "month",
+			'frequency' => 1,
+			'trial_period_days' => 15,
+			'expiry_count' => 12
+		));
+*/
+
+// luego ya podemos vincularlo a un cliente, pero PRIMERO
+// debemos crear el plan		
+
+		// creamos un cliente
+		$customer = Conekta_Customer::create(array(
+		"name"=> "Marcos Valencia",
+		"email"=> "marcos.valencia@gmail.com",
+		"phone"=> "55-5555-5555",
+		"cards"=>  array()
+		));
+
+		$card = $customer->createCard(array('token' => $this->input->post("token") ));
+
+		$subscription = $customer->createSubscription(
+		  array(
+		    'plan' => 'tlahui-plan-mensual'
+		  )
+		);		
+
+		echo print_r( $subscription );
+
+	}
+
+
 }
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
+

@@ -45,6 +45,34 @@ class Payment extends CI_Controller {
 
 
 
+	public function register_card() {
+
+		Conekta::setApiKey("key_Fq5U8GUU28hTqgxy4md4TQ");
+
+		// Con éstos datos, creamos un customer...
+		try{
+		  $customer = Conekta_Customer::create(array(
+		    "name"=> "Marcos Valencia",
+		    "email"=> "marcos.valencia@gmail.com",
+		    "phone"=> "55-5555-5555",
+		    "cards"=>  array()
+		  ));
+
+
+			$card = $customer->createCard(array('token' => $this->input->post("token") ));
+			
+			//echo $card->id;
+			echo print_r( $card );
+
+		}catch (Conekta_Error $e){
+		  echo $e->getMessage();
+		 //el cliente no pudo ser creado
+		}		
+
+	}
+
+
+
 }
 
 /* End of file welcome.php */

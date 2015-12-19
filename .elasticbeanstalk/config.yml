@@ -1,0 +1,10 @@
+branch-defaults:
+  rel-v1.0:
+    environment: null
+global:
+  application_name: eCommerceAPI
+  default_ec2_keyname: awstlahui
+  default_platform: PHP 5.6
+  default_region: us-west-2
+  profile: tlahui
+  sc: git

@@ -26,6 +26,22 @@ class Payment extends CI_Controller {
 			echo $e->getMessage();
 		}
 	}
+
+
+	public function confirm_payment() {
+		$body = @file_get_contents("php://input");
+		$event_json = json_decode( $body );
+
+		if ( $event_json->type == "charge.paid" ) {
+			echo $event_json->data->object->id . "   " .
+				$event_json->data->object->payment_method->name;
+		}
+
+	}
+
+
+
+
 }
 
 /* End of file welcome.php */

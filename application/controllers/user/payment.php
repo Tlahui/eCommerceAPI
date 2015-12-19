@@ -10,13 +10,16 @@ class Payment extends CI_Controller {
 		try
 		{
 			$charge = Conekta_Charge::create(array(
-				"amount"=> 51000,
+				"amount"=> 10000,
 				"currency"=> "MXN",
 				"description"=> "Tlahui",
-				"reference_id"=> "Tlahui100",
+				"reference_id"=> "Tlahui12345",
 				"card"=> $this->input->post("token")
 			));
-			var_dump($charge);
+			//var_dump($charge);
+
+			echo print_r( $charge );
+
 		}
 		catch (Conekta_Error $e)
 		{

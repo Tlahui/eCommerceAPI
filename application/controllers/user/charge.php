@@ -39,7 +39,9 @@ class Charge extends CI_Controller {
 
                         if($event_json->type == 'charge.paid')
                         {
-                               echo $event_json->data->object->id;
+                               $response['id'] = $event_json->data->object->id;
+                               $response['reference_id'] = $event_json->data->object->reference_id;
+                               echo json_encode($response);
                         }
 
 

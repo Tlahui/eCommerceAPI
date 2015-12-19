@@ -1,21 +1,4 @@
-Skip to content
-This repository  
-Search
-Pull requests
-Issues
-Gist
-ToDo
- @xabita
- Watch 93
-  Star 784
- Fork 308 tpyo/amazon-s3-php-class 
- Code  Issues 35  Pull requests 22
- Boards  Burndown  Pulse  Graphs
-Branch: master Find file Copy pathamazon-s3-php-class/S3.php
-928bb51  on 25 Oct
-@tpyo tpyo Merge pull request #115 from gabrieljenik/master
-10 contributors @tpyo @clphillips @gabrieljenik @vrana @ptarjan @damac23 @ericnorris @tmuras @clubdeuce @daveajones
-RawBlameHistory     2390 lines (2118 sloc)  72.3 KB
+
 <?php
 /**
 * $Id$
@@ -2145,5 +2128,5 @@ class S3Exception extends Exception {
 		$this->line = $line;
 	}
 }
-Status API Training Shop Blog About Pricing
-© 2015 GitHub, Inc. Terms Privacy Security Contact Help
+/*Status API Training Shop Blog About Pricing
+© 2015 GitHub, Inc. Terms Privacy Security Contact Help*/

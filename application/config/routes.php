@@ -41,7 +41,7 @@
 
 $route['user/upload'] 			=  "user/upload/upload_image";
 $route['user/checkout'] 		=  "user/payment/checkout";
-
+$route['conekta/user/webhook'] 	=  "user/payment/confirm_payment";
 $route['default_controller'] 	= "welcome";
 $route['404_override'] 			= '';
 

@@ -1,9 +1,12 @@
-<<<<<<< HEAD
+
 hola a todos
-=======
->>>>>>> origin/development
 marcos
 feli
+marcos
+Elizabeth
+ChemaSamano
+benjamin
+fzagato
 Rick
 ChemaSamano
 benjamin

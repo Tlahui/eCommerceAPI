@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-galileo
-
-=======
 mvalenciarmz
->>>>>>> development
+galileo

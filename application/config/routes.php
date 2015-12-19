@@ -37,6 +37,9 @@
 | in the URL cannot be matched to a valid route.
 |
 */
+
+$route['user/add/card'] =  "user/payment/register_card";
+
 $route['user/checkout'] =  "user/payment/checkout";
 $route['user/upload'] =  "user/upload/upload_image";
 $route['conekta/user/webhook'] =  "user/payment/confirm_payment";

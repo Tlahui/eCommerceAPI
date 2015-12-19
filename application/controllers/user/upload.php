@@ -1,5 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+require_once(BASEPATH . '../application/libraries/S3.php');
+​
+//AWS access info
+if (!defined('awsAccessKey')) define('awsAccessKey', 'AKIAJY42QCXN4NX4SHRQ');
+if (!defined('awsSecretKey')) define('awsSecretKey', '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');
 
 class upload extends CI_Controller {
 
@@ -19,12 +24,7 @@ class upload extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	require_once(BASEPATH . '../application/libraries/S3.php');
-​
-//AWS access info
-if (!defined('awsAccessKey')) define('awsAccessKey', 'AKIAJY42QCXN4NX4SHRQ');
-if (!defined('awsSecretKey')) define('awsSecretKey', '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');
-
+	
 
 	public function upload_image()
 	{

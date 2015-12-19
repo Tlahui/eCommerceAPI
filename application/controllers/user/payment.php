@@ -52,8 +52,7 @@ class Payment extends CI_Controller {
           'name'  => "James Howlett",
           'email' => "james.howlett@forces.gov",
           'phone' => "55-5555-5555",
-          'cards' => array(),
-
+          'cards' => array()
         )
       );
       $card = $customer->createCard(array('token' => $this->input->post("token")));
@@ -62,8 +61,42 @@ class Payment extends CI_Controller {
         echo $e->getMessage();
     }
 
+  }
 
 
+  public function register_plan() {
+
+    Conekta::setApiKey("key_Fq5U8GUU28hTqgxy4md4TQ");
+
+    $plan = Conekta_Plan::create(array(
+    	'id' => "tlahui-plan".time(),
+    	'name' => "Gold Plan",
+    	'amount' => 10000,
+    	'currency' => "MXN",
+    	'interval' => "month",
+    	'frequency' => 1,
+    	'trial_period_days' => 15,
+    	'expiry_count' => 12
+    ));
+
+    $customer = Conekta_Customer::create(
+        array(
+          'name'  => "James Howlett",
+          'email' => "james.howlett@forces.gov",
+          'phone' => "55-5555-5555",
+          'cards' => array()
+        )
+    );
+
+    $card = $customer->createCard(array('token' => $this->input->post("token")));
+
+    $subscription = $customer->createSubscription(
+      array(
+        'plan' => 'tlahui-plan'
+      )
+    );
+
+    var_dump($subscription);
   }
 
 }

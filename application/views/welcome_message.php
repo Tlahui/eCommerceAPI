@@ -4,5 +4,4 @@ elizabeth-slack
 galileo
 abautista
 rick_vera
-abautista....
 

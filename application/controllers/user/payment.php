@@ -51,6 +51,40 @@ class Payment extends CI_Controller {
 		  echo $e->getMessage();
 		}
 	}
+
+	public function subscribe()
+	{
+		Conekta::setApiKey("key_Fq5U8GUU28hTqgxy4md4TQ");
+		try{
+			$plan = Conekta_Plan::create(array(
+				'id' => "tlahui-plan".time(),
+				'name' => "Tlahui Plan",
+				'amount' => 100000,
+				'currency' => "MXN",
+				'interval' => "month",
+				'frequency' => 1,
+				'trial_period_days' => 30,
+				'expiry_count' => 12
+			));
+			$customer = Conekta_Customer::create(array(
+				"name"=> "Lews Therin",
+				"email"=> "lews.therin@gmail.com",
+				"phone"=> "55-5555-5555",
+				"cards"=>  array()
+			));
+			$card = $customer->createCard(array('token' => $this->input->post("token")));
+			$subscription = $customer->createSubscription(
+			  array(
+			    'plan' => 'tlahui-plan'
+			  )
+			);
+			var_dump($subscription);
+		}
+		catch (Conekta_Error $e)
+		{
+			echo $e->getMessage();
+		}
+	}
 }
 
 /* End of file welcome.php */

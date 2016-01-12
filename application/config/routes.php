@@ -38,6 +38,8 @@
 |
 */
 
+
+//rutas para las funciones
 $route['user/upload'] =  "user/upload/upload_image";
 $route['user/checkout'] =  "user/charge/checkout";
 $route['user/add/card'] =  "user/charge/register_card";
